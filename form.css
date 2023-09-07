@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+/* body{
+font-family: arial;
+} */
 .page {
     /* border: 2px solid rgb(247, 1, 1); */
     background-color: #00000029;
