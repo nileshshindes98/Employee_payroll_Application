@@ -1,56 +1,50 @@
 const form = document.getElementById("employeeForm");
+const resetButton = document.getElementById("resetButton");
 
 
+// -----------------------------------------formSubmit--------------------------------------
 
-
-form.addEventListener("submit",function(event){
+form.addEventListener("submit", function (event) {
     // console.log(form);
     event.preventDefault();
     let name = document.getElementById("name").value;
-// -----------------------------profile------------------------------------------------
+    // -----------------------------profile------------------------------------------------
 
     let profile = document.getElementsByName("radioProfile")
     let selectedValue;
     for (let i = 0; i < profile.length; i++) {
         // console.log(profile[i]);
         if (profile[i].checked) {
-          selectedValue = profile[i].value;
-          break;
+            selectedValue = profile[i].value;
+            break;
         }
-      }
-// -----------------------------------gender--------------------------------------------  
+    }
+    // -----------------------------------gender--------------------------------------------  
 
     let genderRadios = document.getElementsByName("gender");
     let selectedGender
-         for (var i = 0; i < genderRadios.length; i++) {
-            if (genderRadios[i].checked) {
-                selectedGender = genderRadios[i].value;
-            }
+    for (let i = 0; i < genderRadios.length; i++) {
+        if (genderRadios[i].checked) {
+            selectedGender = genderRadios[i].value;
         }
-    
-    // let selectedGender = getSelectedGender();
-    // if (selectedGender) {
-    //     console.log("Selected gender: " + selectedGender);
-    // } else {
-    //     console.log("No gender selected.");
-    // }
+    }
 
-// --------------------------------department-------------------------------------------
+    // --------------------------------department-------------------------------------------
 
-   
+
     let checkboxDepartmet = document.querySelectorAll('input[type="checkbox"]');
-   
-    for (var i = 0; i < checkboxDepartmet.length; i++) {
+
+    for (let i = 0; i < checkboxDepartmet.length; i++) {
         if (checkboxDepartmet[i].checked) {
             selectedDepart = checkboxDepartmet[i].id;
         }
     }
 
-// -----------------------------------------salary------------------------------------------- 
+    // -----------------------------------------salary------------------------------------------- 
 
     let selectSalary = document.getElementById("salary").value;
 
-// ---------------------------------------------date--------------------------------------------    
+    // ---------------------------------------------date--------------------------------------------    
 
     const day = document.getElementById("day").value;
     const month = document.getElementById("month").value;
@@ -59,19 +53,34 @@ form.addEventListener("submit",function(event){
 
     const notes = document.getElementById("notes").value;
 
-    console.log("Name:", name);
-    console.log("Profile:", selectedValue);
-    console.log("Gender:", selectedGender);
-    console.log("Departments:", selectedDepart);
-    console.log("Salary:", selectSalary);
-    console.log("Start Date:", startDate);
-    console.log("Notes:", notes);
+    const employeeData = {
+        name: name,
+        profile: selectedValue,
+        gender: selectedGender,
+        departments: selectedDepart,
+        salary: selectSalary,
+        startDate: startDate,
+        notes: notes
+    };
+    console.log(employeeData);
+    $.ajax({
+
+        type: "POST",
+        url: "http://localhost:3000/employees",
+        contentType: "application/json",
+        data: JSON.stringify(employeeData),
+        success: function (data) {
+            console.log("Data saved successfully :", data);
+        },
+        error: function (error) {
+            console.error("failed to save the data ", error);
+        }
+    });
 });
 
-// if (radioElement && radioElement.checked) {
- 
-//     var selectedValue = radioElement.value;
-//     console.log("Selected Value: " + selectedValue);
-//   } else {
-//     console.log("Radio option is not selected.");
-// }
+// --------------------------------------resetButton-----------------------------------------------------
+
+resetButton.addEventListener("click", function (event) {
+    form.reset();
+});
+
