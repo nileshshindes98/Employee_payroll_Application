@@ -33,10 +33,10 @@ form.addEventListener("submit", function (event) {
 
 
     let checkboxDepartmet = document.querySelectorAll('input[type="checkbox"]');
-
+    let selectedDepart =[];
     for (let i = 0; i < checkboxDepartmet.length; i++) {
         if (checkboxDepartmet[i].checked) {
-            selectedDepart = checkboxDepartmet[i].id;
+        selectedDepart.push(checkboxDepartmet[i].id);
         }
     }
 
