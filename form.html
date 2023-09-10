@@ -11,12 +11,11 @@
 <body>
     <div class="page">
         <!--------------------------------------nav----------------------------------------------->
-        <nav class="navbar">
+        <nav class="navbar" onclick="redirectToDashboard()">
             <div class="logo">
                 <img src="./assets/images/logo.png" alt="">
             </div>
             <div><span style="color: #82A70C; font-weight: bold; cursor: pointer;">Employee</span><br>Payroll</div>
-
 
         </nav>
         <!--------------------------------------nav----------------------------------------------->
@@ -63,9 +62,9 @@
                         <div class="row-content-gender">
                             <label for="">Gender</label>
                             <div class="gender">
-                                <input type="radio" name="gender" value="male">
+                                <input type="radio" name="gender" id="male" value="male">
                                 <label for="male">Male</label>
-                                <input type="radio" name="gender" value="Female">
+                                <input type="radio" name="gender" id="female" value="female">
                                 <label for="male">Female</label>
                             </div>
                         </div>
@@ -118,6 +117,9 @@
                         <div class="row-content-date">
                             <label class="label text" for="startDate">Start Date</label>
                             <div class="date">
+                                <input type="date" id="datePicker">
+                            </div>
+                            <!-- <div class="date">
                                 <select name="Day" id="day">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -182,7 +184,7 @@
                                     <option value="2012">2012</option>
                                     <option value="2011">2011</option>
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
 
                         <!----------------------------------------------notes------------------------------------------------------->

@@ -1,11 +1,13 @@
+var environment = window.location.origin;
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    fetch("../db.json")
+    fetch("http://localhost:3000/employees/")
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
             const tableBody = document.getElementById("employeeTableBody");
-            const employees = data.employees; // Access the "employees" array
+            const employees = data; // Access the "employees" array
 
             employees.forEach((employee, index) => {
                 const row = document.createElement("tr");
@@ -20,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${employee.salary}</td>
                     <td>${employee.startDate}</td>
                     <td class="actions">
-                    <button onclick="editEmployee(${employee.id})"><img src="./emplyeePayrollForm/assets/icons/create-black-18dp.svg" alt="edit"></button>
-                    <button onclick="deleteEmployee(${employee.id})"><img src="./emplyeePayrollForm/assets/icons/delete-black-18dp.svg" alt="Delete"></button>
+                    <button onclick="editEmployee(${employee.id})"><img src="/assets/icons/create-black-18dp.svg" alt="edit"></button>
+                    <button onclick="deleteEmployee(${employee.id})"><img src="/assets/icons/delete-black-18dp.svg" alt="Delete"></button>
                 </td>
                 `;
                 tableBody.appendChild(row);
@@ -41,13 +43,18 @@ fetch(`http://localhost:3000/employees/${id}`, {
         //     "Content-Type": "application/json",
         // }
     }).then(response => response.json()).then(data => {
-        console.log(data);
+        window.location.reload();
     });
+}
+
+function editEmployee(id) {
+    window.location.replace(`${environment}/form`);
+    localStorage.setItem('setEditId', id);
 }
 
 function getProfileImage(profileValue) {
     // Define the base path to the profile images
-    const basePath = "./emplyeePayrollForm/assets/profile-images/";
+    const basePath = "/assets/profile-images/";
 
     // Define a mapping of profile values to image filenames
     const profileImageMap = {
@@ -67,4 +74,9 @@ function getProfileImage(profileValue) {
         const defaultImageUrl = `${basePath}default-profile-image.png`; // Update with your default image filename
         return defaultImageUrl;
     }
+}
+
+function createNewUser() {
+    window.location.replace(`${environment}/form`);
+    localStorage.removeItem('setEditId');
 }

@@ -1,12 +1,20 @@
+var environment = window.location.origin;
+
 const form = document.getElementById("employeeForm");
-const resetButton = document.getElementById("resetButton");
+// const resetButton = document.getElementById("resetButton");
 
-// let ID;
-// fetch('http://localhost:3000/employees').then(res => res.json()).then(data => {
-//     console.log(data);
-//     ID = data.length + 1;
-// });
-
+const editId = localStorage.getItem('setEditId');
+if (editId) {
+    fetch(`http://localhost:3000/employees/${editId}`).then(res => res.json()).then(data => {
+        document.getElementById("name").value = data.name;
+        document.getElementById(`profile${data.profile}`).checked = true;
+        document.getElementById(`${data.gender}`).checked = true;
+        // document.querySelectorAll('input[type="checkbox"]');
+        document.getElementById("salary").value = data.salary;
+        document.getElementById("datePicker").value = data.startDate;
+        document.getElementById("notes").value = data.notes;
+    });
+};
 
 // -----------------------------------------formSubmit--------------------------------------
 
@@ -50,10 +58,12 @@ form.addEventListener("submit", function (event) {
 
     // ---------------------------------------------date--------------------------------------------    
 
-    const day = document.getElementById("day").value;
-    const month = document.getElementById("month").value;
-    const year = document.getElementById("year").value;
-    const startDate = `${day} ${month} ${year}`;
+    // const day = document.getElementById("day").value;
+    // const month = document.getElementById("month").value;
+    // const year = document.getElementById("year").value;
+    // const startDate = `${day} ${month} ${year}`;
+
+    const date = document.getElementById("datePicker").value;
 
     const notes = document.getElementById("notes").value;
 
@@ -64,7 +74,7 @@ form.addEventListener("submit", function (event) {
         gender: selectedGender,
         departments: selectedDepart,
         salary: selectSalary,
-        startDate: startDate,
+        startDate: date,
         notes: notes
     };
     console.log(employeeData);
@@ -86,7 +96,11 @@ form.addEventListener("submit", function (event) {
 
 // --------------------------------------resetButton-----------------------------------------------------
 
-resetButton.addEventListener("click", function (event) {
-form.reset();
-});
+// resetButton.addEventListener("click", function (event) {
+// form.reset();
+// });
 
+function redirectToDashboard() {
+    window.location.replace(`${environment}/dashboard`);
+    localStorage.removeItem('setEditId');
+}
