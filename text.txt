@@ -1,0 +1,2 @@
+run programm => open dashboard html => new Terminal => json-server --watch db.json --port3000
+

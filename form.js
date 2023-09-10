@@ -77,7 +77,7 @@ form.addEventListener("submit", function (event) {
         startDate: date,
         notes: notes
     };
-    console.log(employeeData);
+
 
     fetch("http://localhost:3000/employees/", {
         method: "POST",
