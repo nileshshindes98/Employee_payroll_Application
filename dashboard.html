@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/79aafe6558.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./emplyeePayrollForm/assets/images/logo.png" alt="">
+            </div>
+            <div><span style="color: #82A70C; font-weight: bold; cursor: pointer;">EMPLOYEE</span><br>PAYROLL</div>
+        </nav>
+        <div class="dashboard-content">
+            <div class="sub-nav">
+                <div style="font-weight: bold; color: #42515F;">Employee Details</div>
+                <div class="btg-group">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <a href="http://localhost:58434/emplyeePayrollForm/form" style="text-decoration: none;">
+                        <button style="width: 8vw;height: 5vh;background: #82A70C 0% 0% no-repeat padding-box;border-radius: 5px;opacity: 2;">+ Add User</button>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="table-content-div">
+
+                <table>
+                    
+                    <thead>
+                        <tr>
+                            <th></th>
+
+                            <th>Profile</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Start Date</th>
+                            <th id="THaction">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                      
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

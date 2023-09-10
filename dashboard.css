@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    /* border: 2px solid rgb(247, 1, 1); */
+    background-color: #00000029;
+
+    width: 100%;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------------------------------------navbar---------------------------------------------------------- */
+.navbar {
+    width: 100%;
+    height: 30%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20%;
+
+}
+
+/* ------------------------------------------------dashboard-content-------------------------------------------- */
+
+.dashboard-content {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid black; */
+    padding: 20px;
+}
+
+
+
+/* --------------------------------------sub-nav--------------------------------------------------------------- */
+
+.sub-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    /* border: 1px solid black; */
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.btg-group button:nth-child(1) {
+    /* border-radius: 90%; */
+    /* border: none; */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000029;
+    border-radius: 28px;
+    opacity: 1;
+    width: 3vw;
+    height: 5vh;
+}
+
+.btg-group button:nth-child(2) {
+
+    width: 8vw;
+    height: 5vh;
+    background: #82A70C 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 2;
+}
+
+/* ----------------------------------table------------------------------------------------------------ */
+
+.table-content-div {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 20px; */
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #42515F;
+    color: #fff;
+}
+
+#THaction{
+    width: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: transparent;
+opacity: 1;
+border: none;
+}
+
+.delete-button {
+    background: none;
+    /* Remove background */
+    border: none;
+    /* Remove border */
+    cursor: pointer;
+    /* Add a pointer cursor to indicate interactivity */
+}

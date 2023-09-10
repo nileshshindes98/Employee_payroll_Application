@@ -1,0 +1,102 @@
+{
+  "employees": [
+    {
+      "name": "Yogesh More",
+      "profile": "2",
+      "gender": "Female",
+      "departments": [
+        "sales"
+      ],
+      "salary": "",
+      "startDate": "1 Jan 2023",
+      "notes": "",
+      "id": 14
+    },
+    {
+      "name": "Yogesh More",
+      "profile": "1",
+      "gender": "male",
+      "departments": [
+        "finance",
+        "engineer",
+        "others"
+      ],
+      "salary": "3-5.0 lakh",
+      "startDate": "20 Feb 2020",
+      "notes": "",
+      "id": 15
+    },
+    {
+      "name": "Rajat Nikam",
+      "profile": "2",
+      "gender": "male",
+      "departments": [
+        "engineer"
+      ],
+      "salary": "5-8.0 lakh",
+      "startDate": "25 Dec 2020",
+      "notes": "",
+      "id": 16
+    },
+    {
+      "name": "Nilesh Shinde",
+      "profile": "2",
+      "gender": "male",
+      "departments": [
+        "engineer"
+      ],
+      "salary": "3-5.0 lakh",
+      "startDate": "19 Aug 2018",
+      "notes": "",
+      "id": 17
+    },
+    {
+      "name": "Yogita More",
+      "profile": "3",
+      "gender": "Female",
+      "departments": [
+        "finance"
+      ],
+      "salary": "5-8.0 lakh",
+      "startDate": "11 Feb 2018",
+      "notes": "",
+      "id": 18
+    },
+    {
+      "name": "Akshar Hate",
+      "profile": "1",
+      "gender": "Female",
+      "departments": [
+        "others"
+      ],
+      "salary": "0-1.0 lakh",
+      "startDate": "20 May 2018",
+      "notes": "",
+      "id": 19
+    },
+    {
+      "name": "Snehal Kumbhar",
+      "profile": "4",
+      "gender": "Female",
+      "departments": [
+        "hr"
+      ],
+      "salary": "0-1.0 lakh",
+      "startDate": "31 Dec 2018",
+      "notes": "",
+      "id": 20
+    },
+    {
+      "name": "Yogesh More",
+      "profile": "2",
+      "gender": "Female",
+      "departments": [
+        "sales"
+      ],
+      "salary": "3-5.0 lakh",
+      "startDate": "1 Jan 2023",
+      "notes": "",
+      "id": 21
+    }
+  ]
+}
