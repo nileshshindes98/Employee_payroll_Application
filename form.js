@@ -1,11 +1,16 @@
 const form = document.getElementById("employeeForm");
 const resetButton = document.getElementById("resetButton");
 
+// let ID;
+// fetch('http://localhost:3000/employees').then(res => res.json()).then(data => {
+//     console.log(data);
+//     ID = data.length + 1;
+// });
+
 
 // -----------------------------------------formSubmit--------------------------------------
 
 form.addEventListener("submit", function (event) {
-    // console.log(form);
     event.preventDefault();
     let name = document.getElementById("name").value;
     // -----------------------------profile------------------------------------------------
@@ -13,7 +18,6 @@ form.addEventListener("submit", function (event) {
     let profile = document.getElementsByName("radioProfile")
     let selectedValue;
     for (let i = 0; i < profile.length; i++) {
-        // console.log(profile[i]);
         if (profile[i].checked) {
             selectedValue = profile[i].value;
             break;
@@ -33,10 +37,10 @@ form.addEventListener("submit", function (event) {
 
 
     let checkboxDepartmet = document.querySelectorAll('input[type="checkbox"]');
-    let selectedDepart =[];
+    let selectedDepart = [];
     for (let i = 0; i < checkboxDepartmet.length; i++) {
         if (checkboxDepartmet[i].checked) {
-        selectedDepart.push(checkboxDepartmet[i].id);
+            selectedDepart.push(checkboxDepartmet[i].id);
         }
     }
 
@@ -54,6 +58,7 @@ form.addEventListener("submit", function (event) {
     const notes = document.getElementById("notes").value;
 
     const employeeData = {
+        // id: ID++,
         name: name,
         profile: selectedValue,
         gender: selectedGender,
@@ -63,24 +68,25 @@ form.addEventListener("submit", function (event) {
         notes: notes
     };
     console.log(employeeData);
-    $.ajax({
 
-        type: "POST",
-        url: "http://localhost:3000/employees",
-        contentType: "application/json",
-        data: JSON.stringify(employeeData),
-        success: function (data) {
-            console.log("Data saved successfully :", data);
-        },
-        error: function (error) {
-            console.error("failed to save the data ", error);
+    fetch("http://localhost:3000/employees/", {
+        method: "POST",
+        body: JSON.stringify(employeeData),
+        headers: {
+            "Content-Type": "application/json",
         }
+    }).then(response => response.json()).then(data => {
+        console.log(data);
     });
+
+
 });
+
+
 
 // --------------------------------------resetButton-----------------------------------------------------
 
 resetButton.addEventListener("click", function (event) {
-    form.reset();
+form.reset();
 });
 
