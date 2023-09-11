@@ -1,11 +1,24 @@
 var environment = window.location.origin;
 
 const form = document.getElementById("employeeForm");
+
 // const resetButton = document.getElementById("resetButton");
+
+const submitbtn = document.getElementById("submit");
+const updatebtn = document.getElementById("update");
+if (localStorage.getItem("setEditId")) {
+    submitbtn.style.display = "none";
+    updatebtn.style.display = "block";
+} else {
+    submitbtn.style.display = "block";
+    updatebtn.style.display = "none";
+}
+
 
 // ---------------------------edit data------------------------------------------
 
 const editId = localStorage.getItem('setEditId');
+
 if (editId) {
     fetch(`http://localhost:3000/employees/${editId}`).then(res => res.json()).then(data => {
         document.getElementById("name").value = data.name;
@@ -20,19 +33,81 @@ if (editId) {
         document.getElementById("salary").value = data.salary;
         document.getElementById("datePicker").value = data.startDate;
         document.getElementById("notes").value = data.notes;
+    })
+        .catch(error => {
+            console.error("Failed to fetch employee data:", error);
+        });
+}
 
-        const updatedData = {
-            name: data.name,
-            profile: data.profile,
-            gender: data.gender,
-            departments: data.departments,
-            salary: data.salary,
-            startDate: data.startDate,
-            notes: data.notes
-        };
+function submitEditedEmployee() {
 
-    });
-};
+    let updatename = document.getElementById("name").value;
+    // -----------profile-----------
+    let profile = document.getElementsByName("radioProfile")
+    let updateprofile;
+    for (let i = 0; i < profile.length; i++) {
+        if (profile[i].checked) {
+            updateprofile = profile[i].value;
+            break;
+        }
+    }
+    // -----------gender--------------
+
+    let genderRadios = document.getElementsByName("gender");
+    let updategen
+    for (let i = 0; i < genderRadios.length; i++) {
+        if (genderRadios[i].checked) {
+            updategen = genderRadios[i].value;
+        }
+    }
+    // --------------------------department-------------------------
+
+    let checkboxDepartmet = document.querySelectorAll('input[type="checkbox"]');
+    let updatedepart = [];
+    for (let i = 0; i < checkboxDepartmet.length; i++) {
+        if (checkboxDepartmet[i].checked) {
+            updatedepart.push(checkboxDepartmet[i].id);
+        }
+    }
+    // -----------------salary------------------ 
+
+    let updatesalary = document.getElementById("salary").value;
+
+    const updatedate = document.getElementById("datePicker").value;
+
+    const updatenote = document.getElementById("notes").value;
+
+    const updatedData = {
+
+        name: updatename,
+        profile: updateprofile,
+        gender: updategen,
+        departments: updatedepart,
+        salary: updatesalary,
+        startDate: updatedate,
+        notes: updatenote
+
+    }
+
+    fetch(`http://localhost:3000/employees/${editId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedData),
+    })
+        .then(response => {
+            if (response.ok) {
+                window.location.replace(`${environment}/dashboard`);
+            } else {
+                console.error("Failed to update employee data.");
+            }
+        })
+        .catch(error => {
+            console.error("Error updating employee data:", error);
+        });
+}
+
 
 
 
