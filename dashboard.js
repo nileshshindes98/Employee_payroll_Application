@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:3000/employees/")
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             const tableBody = document.getElementById("employeeTableBody");
             const employees = data; // Access the "employees" array
 
@@ -78,5 +78,5 @@ function getProfileImage(profileValue) {
 
 function createNewUser() {
     window.location.replace(`${environment}/form`);
-    localStorage.removeItem('setEditId');
+    // localStorage.removeItem('setEditId');
 }

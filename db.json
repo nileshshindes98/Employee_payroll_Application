@@ -88,6 +88,30 @@
       "startDate": "2023-06-05",
       "notes": "",
       "id": 28
+    },
+    {
+      "name": "Yogesh More",
+      "profile": "1",
+      "gender": "male",
+      "departments": [
+        "sales"
+      ],
+      "salary": "3-5.0 lakh",
+      "startDate": "2023-09-11",
+      "notes": "",
+      "id": 29
+    },
+    {
+      "name": "Nilesh More",
+      "profile": "2",
+      "gender": "male",
+      "departments": [
+        "engineer"
+      ],
+      "salary": "3-5.0 lakh",
+      "startDate": "2014-02-18",
+      "notes": "",
+      "id": 30
     }
   ]
 }
