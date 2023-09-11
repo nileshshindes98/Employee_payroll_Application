@@ -1,38 +1,11 @@
 {
   "employees": [
     {
-      "name": "Yogesh More",
-      "profile": "1",
-      "gender": "male",
-      "departments": [
-        "sales",
-        "finance",
-        "engineer"
-      ],
-      "salary": "3-5.0 lakh",
-      "startDate": "2014-02-20",
-      "notes": "",
-      "id": 22
-    },
-    {
-      "name": "Yogita More",
-      "profile": "3",
+      "name": "sachin shinde",
+      "profile": "2",
       "gender": "female",
       "departments": [
-        "hr",
-        "finance"
-      ],
-      "salary": "3-5.0 lakh",
-      "startDate": "2020-08-15",
-      "notes": "",
-      "id": 23
-    },
-    {
-      "name": "Nilesh shinde",
-      "profile": "1",
-      "gender": "male",
-      "departments": [
-        "engineer"
+        "others"
       ],
       "salary": "5-8.0 lakh",
       "startDate": "2017-08-19",
@@ -114,9 +87,9 @@
       "id": 30
     },
     {
-      "name": "More More",
-      "profile": "1",
-      "gender": "male",
+      "name": "John More",
+      "profile": "2",
+      "gender": "female",
       "departments": [
         "engineer"
       ],
