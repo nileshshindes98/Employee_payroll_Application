@@ -11,7 +11,6 @@ if (editId) {
         document.getElementById("name").value = data.name;
         document.getElementById(`profile${data.profile}`).checked = true;
         document.getElementById(`${data.gender}`).checked = true;
-        // document.querySelectorAll('input[type="checkbox"]');
         const departmentCheckboxes = document.querySelectorAll('.department input[name="department"]');
         departmentCheckboxes.forEach(checkbox => {
             if (data.departments.includes(checkbox.id)) {
@@ -21,6 +20,17 @@ if (editId) {
         document.getElementById("salary").value = data.salary;
         document.getElementById("datePicker").value = data.startDate;
         document.getElementById("notes").value = data.notes;
+
+        const updatedData = {
+            name: data.name,
+            profile: data.profile,
+            gender: data.gender,
+            departments: data.departments,
+            salary: data.salary,
+            startDate: data.startDate,
+            notes: data.notes
+        };
+
     });
 };
 
@@ -98,6 +108,8 @@ form.addEventListener("submit", function (event) {
     }).then(response => response.json()).then(data => {
         console.log(data);
     });
+
+
 
 
 });
