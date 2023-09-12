@@ -57,9 +57,9 @@
 
 .btg-group button:nth-child(1) {
     /* border-radius: 90%; */
-    /* border: none; */
+    border: none;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 1px 3px #00000029;
+    box-shadow: 0px 1px 3px;
     border-radius: 28px;
     opacity: 1;
     width: 3vw;
@@ -67,11 +67,12 @@
 }
 
 .btg-group button:nth-child(2) {
-
+ color: white;
     width: 8vw;
     height: 5vh;
     background: #82A70C 0% 0% no-repeat padding-box;
     border-radius: 5px;
+    border: none;
     opacity: 2;
 }
 

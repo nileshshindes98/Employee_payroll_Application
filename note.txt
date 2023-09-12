@@ -1,0 +1,14 @@
+Observable:
+
+1.An observable is something that can change over time, like a data source or an event stream.
+2.Observables can emit values or trigger events at different times.
+
+Observer:
+
+1.An observer is an entity (usually a function) that wants to be notified when the observable changes
+2.It "observes" or "listens" to the observable for any updates or changes.
+3.When the observable has something to report, it calls the observer's function, passing the new data 
+  or event as an argument
+
+
+ 

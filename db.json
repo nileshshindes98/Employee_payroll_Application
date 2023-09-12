@@ -1,33 +1,8 @@
 {
   "employees": [
     {
-      "name": "sachin shinde",
-      "profile": "2",
-      "gender": "female",
-      "departments": [
-        "others"
-      ],
-      "salary": "5-8.0 lakh",
-      "startDate": "2017-08-19",
-      "notes": "",
-      "id": 24
-    },
-    {
-      "name": "Yogesh Uddhav More",
-      "profile": "2",
-      "gender": "male",
-      "departments": [
-        "engineer",
-        "others"
-      ],
-      "salary": "1-3.0 lakh",
-      "startDate": "2021-07-14",
-      "notes": "",
-      "id": 25
-    },
-    {
       "name": "Rajat Nikam",
-      "profile": "2",
+      "profile": "3",
       "gender": "male",
       "departments": [
         "engineer"
@@ -88,7 +63,7 @@
     },
     {
       "name": "John More",
-      "profile": "2",
+      "profile": "1",
       "gender": "female",
       "departments": [
         "engineer"
@@ -97,6 +72,18 @@
       "startDate": "2014-02-20",
       "notes": "",
       "id": 31
+    },
+    {
+      "name": "Ganesh Kadam",
+      "profile": "1",
+      "gender": "male",
+      "departments": [
+        "engineer"
+      ],
+      "salary": "3-5.0 lakh",
+      "startDate": "2023-09-07",
+      "notes": "",
+      "id": 32
     }
   ]
 }

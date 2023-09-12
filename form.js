@@ -193,9 +193,9 @@ form.addEventListener("submit", function (event) {
 
 // --------------------------------------resetButton-----------------------------------------------------
 
-// resetButton.addEventListener("click", function (event) {
-// form.reset();
-// });
+resetButton.addEventListener("click", function (event) {
+form.reset();
+});
 
 function redirectToDashboard() {
     window.location.replace(`${environment}/dashboard`);
