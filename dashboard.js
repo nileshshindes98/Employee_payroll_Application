@@ -37,10 +37,6 @@ function deleteEmployee(id) {
 console.log('index =>', id);
 fetch(`http://localhost:3000/employees/${id}`, {
         method: "DELETE",
-        // body: JSON.stringify(employeeData),
-        // headers: {
-        //     "Content-Type": "application/json",
-        // }
     }).then(response => response.json()).then(data => {
         window.location.reload();
     });
