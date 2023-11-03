@@ -183,10 +183,6 @@ form.addEventListener("submit", function (event) {
     }).then(response => response.json()).then(data => {
         console.log(data);
     });
-
-
-
-
 });
 
 
